@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimulando Meu Prematuro - Programa Completo de Estimulação</title>
+    <meta name="description" content="Saiba como estimular corretamente o desenvolvimento do seu bebê prematuro em casa! Com orientação de uma especialista em prematuridade.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; line-height: 1.6; overflow-x: hidden; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* Header / Logo */
+        .header { background: #fff; padding: 20px 0; text-align: center; border-bottom: 2px solid #f0e6f6; }
+        .header img { max-width: 220px; height: auto; }
+
+        /* Hero Section */
+        .hero { background: linear-gradient(135deg, #f8f4ff 0%, #e8dff5 50%, #d4c4e8 100%); padding: 60px 0; text-align: center; }
+        .hero h1 { font-size: 2.2rem; color: #2d1b4e; margin-bottom: 20px; line-height: 1.3; }
+        .hero p { font-size: 1.2rem; color: #555; max-width: 700px; margin: 0 auto 30px; }
+        .hero .subtitle { font-size: 1.4rem; color: #7c3aed; font-weight: 700; margin-bottom: 15px; }
+        .hero img { max-width: 400px; border-radius: 20px; margin-top: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); }
+
+        /* Sections */
+        section { padding: 60px 0; }
+        section:nth-child(even) { background: #f9f7fc; }
+
+        .section-title { font-size: 1.8rem; color: #2d1b4e; text-align: center; margin-bottom: 40px; }
+        .section-subtitle { text-align: center; color: #666; font-size: 1.1rem; max-width: 650px; margin: 0 auto 40px; }
+
+        /* Cards / Features */
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .feature-card { background: #fff; border-radius: 16px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); text-align: center; transition: transform 0.3s; }
+        .feature-card:hover { transform: translateY(-5px); }
+        .feature-card .icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .feature-card h3 { color: #2d1b4e; margin-bottom: 10px; font-size: 1.2rem; }
+        .feature-card p { color: #666; font-size: 0.95rem; }
+
+        /* Pain Points */
+        .pain-points { background: #fff; }
+        .pain-list { max-width: 700px; margin: 0 auto; }
+        .pain-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px; padding: 20px; background: #fff5f5; border-radius: 12px; border-left: 4px solid #e53e3e; }
+        .pain-item .emoji { font-size: 1.5rem; flex-shrink: 0; }
+        .pain-item p { color: #555; }
+
+        /* Results / Before-After */
+        .results-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .result-col { padding: 30px; border-radius: 16px; }
+        .result-col.before { background: #fff5f5; border: 1px solid #fed7d7; }
+        .result-col.after { background: #f0fff4; border: 1px solid #c6f6d5; }
+        .result-col h3 { font-size: 1.5rem; margin-bottom: 15px; }
+        .result-col.before h3 { color: #c53030; }
+        .result-col.after h3 { color: #276749; }
+        .result-col ul { list-style: none; }
+        .result-col li { padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .result-col li:last-child { border-bottom: none; }
+        .result-col.before li::before { content: "✗ "; color: #e53e3e; }
+        .result-col.after li::before { content: "✓ "; color: #38a169; }
+
+        /* CTA / Pricing */
+        .pricing { background: linear-gradient(135deg, #2d1b4e 0%, #4c1d95 100%); color: #fff; text-align: center; padding: 80px 0; }
+        .pricing .price-old { font-size: 1.5rem; text-decoration: line-through; color: #a78bfa; }
+        .pricing .price-current { font-size: 3.5rem; font-weight: 800; color: #fbbf24; margin: 15px 0; }
+        .pricing .price-current span { font-size: 1.5rem; }
+        .pricing .price-label { font-size: 1rem; color: #c4b5fd; margin-bottom: 30px; }
+        .pricing .btn-cta { display: inline-block; background: #fbbf24; color: #2d1b4e; padding: 18px 50px; font-size: 1.2rem; font-weight: 700; border-radius: 50px; text-decoration: none; transition: all 0.3s; box-shadow: 0 10px 30px rgba(251,191,36,0.3); }
+        .pricing .btn-cta:hover { transform: scale(1.05); background: #f59e0b; }
+
+        /* Guarantee */
+        .guarantee { text-align: center; padding: 40px 0; background: #fff; }
+        .guarantee img { max-width: 120px; margin-bottom: 15px; }
+        .guarantee h3 { color: #2d1b4e; font-size: 1.3rem; margin-bottom: 10px; }
+        .guarantee p { color: #666; max-width: 600px; margin: 0 auto; }
+
+        /* Testimonials */
+        .testimonials { background: #f9f7fc; }
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .testimonial-card { background: #fff; border-radius: 16px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .testimonial-card .stars { color: #fbbf24; font-size: 1.2rem; margin-bottom: 10px; }
+        .testimonial-card blockquote { color: #555; font-style: italic; margin-bottom: 15px; font-size: 0.95rem; }
+        .testimonial-card .author { font-weight: 600; color: #2d1b4e; }
+
+        /* FAQ */
+        .faq { background: #fff; }
+        .faq-item { border: 1px solid #e2e8f0; border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+        .faq-question { padding: 18px 25px; background: #f8f4ff; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; color: #2d1b4e; }
+        .faq-question:hover { background: #f0e6f6; }
+        .faq-answer { padding: 0 25px 18px; color: #555; line-height: 1.8; display: none; }
+        .faq-item.active .faq-answer { display: block; }
+        .faq-toggle { font-size: 1.3rem; transition: transform 0.3s; }
+        .faq-item.active .faq-toggle { transform: rotate(45deg); }
+
+        /* Footer */
+        .footer { background: #2d1b4e; color: #a78bfa; text-align: center; padding: 30px 0; font-size: 0.85rem; }
+        .footer a { color: #c4b5fd; text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+        .footer p { margin: 5px 0; }
+
+        /* Author Section */
+        .author-section { background: #fff; }
+        .author-content { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
+        .author-content img { max-width: 200px; border-radius: 50%; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .author-text { flex: 1; min-width: 280px; }
+        .author-text h2 { color: #2d1b4e; margin-bottom: 15px; }
+        .author-text p { color: #555; margin-bottom: 10px; }
+        .author-text .highlight { color: #7c3aed; font-weight: 600; }
+
+        /* Modules */
+        .modules { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px; }
+        .module-card { background: #fff; border-radius: 12px; padding: 25px; box-shadow: 0 3px 10px rgba(0,0,0,0.05); text-align: center; border: 1px solid #e8dff5; }
+        .module-card .badge { display: inline-block; background: #7c3aed; color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 10px; }
+        .module-card h4 { color: #2d1b4e; margin-bottom: 8px; }
+        .module-card p { color: #666; font-size: 0.9rem; }
+        .module-card.bonus { border-color: #fbbf24; background: #fffbeb; }
+        .module-card.bonus .badge { background: #f59e0b; }
+
+        /* Checklist items */
+        .checklist { max-width: 650px; margin: 0 auto; }
+        .checklist li { padding: 12px 0; border-bottom: 1px solid #e2e8f0; list-style: none; display: flex; align-items: center; gap: 12px; }
+        .checklist li::before { content: "✓"; color: #7c3aed; font-weight: 700; font-size: 1.1rem; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.6rem; }
+            .hero p { font-size: 1rem; }
+            .pricing .price-current { font-size: 2.5rem; }
+            .results-grid { grid-template-columns: 1fr; }
+            .author-content { flex-direction: column; text-align: center; }
+            .section-title { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <img src="https://estimulandomeuprematuro.com.br/wp-content/uploads/2026/02/LOGO-PNG-1024x823.png" alt="Estimulando Meu Prematuro">
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <p class="subtitle">Saiba como estimular corretamente o desenvolvimento do seu bebê prematuro em casa!</p>
+            <h1>Com orientação de uma especialista em prematuridade</h1>
+            <p>Criado por <strong>Juliana Bandeira</strong>, terapeuta ocupacional com mais de 15 anos de experiência acompanhando bebês prematuros e famílias que viveram a chegada antecipada de seus filhos.</p>
+            <img src="https://estimulandomeuprematuro.com.br/wp-content/uploads/2026/02/Gemini_Generated_Image_g0otksg0otksg0ot_upscaled-scaled.png" alt="Mãe com bebê prematuro">
+        </div>
+    </section>
+
+    <!-- PAIN POINTS -->
+    <section class="pain-points">
+        <div class="container">
+            <h2 class="section-title">Se o seu bebê nasceu prematuro, você provavelmente vive com dúvidas todos os dias</h2>
+            <p class="section-subtitle">Mas junto com esse amor, vêm pensamentos como:</p>
+            <div class="pain-list">
+                <div class="pain-item">
+                    <span class="emoji">😰</span>
+                    <p>Será que estou estimulando meu bebê da forma correta?</p>
+                </div>
+                <div class="pain-item">
+                    <span class="emoji">🤷</span>
+                    <p>E se eu estiver fazendo algo errado sem saber?</p>
+                </div>
+                <div class="pain-item">
+                    <span class="emoji">😔</span>
+                    <p>Meu bebê está se desenvolvendo como deveria para a idade corrigida?</p>
+                </div>
+                <div class="pain-item">
+                    <span class="emoji">😢</span>
+                    <p>Saí do hospital sem saber exatamente o que fazer em casa</p>
+                </div>
+            </div>
+            <p style="text-align:center; margin-top:20px; color:#888; font-style:italic;">Não por falta de cuidado. Mas por falta de direção.</p>
+        </div>
+    </section>
+
+    <!-- AUTHOR -->
+    <section class="author-section">
+        <div class="container">
+            <div class="author-content">
+                <img src="https://estimulandomeuprematuro.com.br/wp-content/uploads/2026/02/juliana-bol-20.png" alt="Juliana Bandeira - Terapeuta Ocupacional">
+                <div class="author-text">
+                    <h2>Um programa criado por quem acompanha bebês prematuros há mais de 15 anos</h2>
+                    <p>Meu nome é <span class="highlight">Juliana Bandeira</span>. Sou <strong>terapeuta ocupacional, especialista em prematuridade</strong>, e há mais de 15 anos acompanho bebês e crianças com atraso ou risco no desenvolvimento.</p>
+                    <p>Durante minha trajetória, acompanhei muitas famílias que viveram o susto da chegada antecipada de um bebê.</p>
+                    <p><em>Eu sei exatamente o que essas mães sentem. O medo. A insegurança. As dúvidas.</em></p>
+                    <p>Por isso, criei este programa. Para levar até você a orientação que normalmente só é possível em atendimentos clínicos. De forma simples. Segura. E possível de aplicar em casa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT IS THE PROGRAM -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">O programa Estimulando Meu Prematuro mostra exatamente como estimular seu bebê com segurança</h2>
+            <p class="section-subtitle">Este não é apenas um material teórico. É um guia prático, em vídeo, que ensina como estimular corretamente o desenvolvimento motor, sensorial e cognitivo do seu bebê.</p>
+            <h3 style="text-align:center; color:#7c3aed; margin-bottom:30px;">Sempre Respeitando:</h3>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="icon">👶</div>
+                    <h3>A individualidade do seu bebê</h3>
+                    <p>Cada bebê tem seu próprio ritmo de desenvolvimento</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">⏱️</div>
+                    <h3>O tempo dele</h3>
+                    <p>Sem pressa, sem comparações, com respeito</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">❤️</div>
+                    <h3>O vínculo mãe-bebê</h3>
+                    <p>Estimulação que fortalece a conexão entre vocês</p>
+                </div>
+            </div>
+            <p style="text-align:center; margin-top:30px; font-size:1.1rem; color:#555;"><strong>O objetivo não é acelerar o desenvolvimento. É estimular com consciência.</strong></p>
+        </div>
+    </section>
+
+    <!-- MODULES -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Conteúdo completo dividido por fases do desenvolvimento (0 a 12 meses)</h2>
+            <p class="section-subtitle">Você terá acesso a aulas em vídeo organizadas por idade:</p>
+            <div class="modules">
+                <div class="module-card">
+                    <span class="badge">Módulo 1</span>
+                    <h4>Fundamentos Essenciais</h4>
+                    <p>Base teórica e prática para começar</p>
+                </div>
+                <div class="module-card">
+                    <span class="badge">Módulo 2</span>
+                    <h4>Estímulos de 0 a 3 meses</h4>
+                    <p>Atividades para os primeiros meses</p>
+                </div>
+                <div class="module-card">
+                    <span class="badge">Módulo 3</span>
+                    <h4>Estímulos de 3 a 6 meses</h4>
+                    <p>Estimulação motora e sensorial</p>
+                </div>
+                <div class="module-card">
+                    <span class="badge">Módulo 4</span>
+                    <h4>Estímulos de 6 a 9 meses</h4>
+                    <p>Exploração e descobertas</p>
+                </div>
+                <div class="module-card">
+                    <span class="badge">Módulo 5</span>
+                    <h4>Estímulos de 9 a 12 meses</h4>
+                    <p>Preparação para os primeiros passos</p>
+                </div>
+                <div class="module-card bonus">
+                    <span class="badge">BÔNUS</span>
+                    <h4>Guia de Brinquedos</h4>
+                    <p>Os melhores brinquedos para cada fase</p>
+                </div>
+            </div>
+            <div style="text-align:center; margin-top:30px;">
+                <p style="color:#666;">Todos os exercícios são: <strong>sem necessidade de equipamentos especiais</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEFORE / AFTER -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">O que muda quando você tem orientação correta</h2>
+            <div class="results-grid">
+                <div class="result-col before">
+                    <h3>ANTES:</h3>
+                    <ul>
+                        <li>Dúvidas sobre o que fazer</li>
+                        <li>Medo de estar fazendo errado</li>
+                        <li>Ansiedade e insegurança</li>
+                        <li>Comparação com outros bebês</li>
+                        <li>Sobrecarga de informação na internet</li>
+                    </ul>
+                </div>
+                <div class="result-col after">
+                    <h3>DEPOIS:</h3>
+                    <ul>
+                        <li>Confiança no que está fazendo</li>
+                        <li>Segurança nos estímulos</li>
+                        <li>Tranquilidade e paz de espírito</li>
+                        <li>Respeito ao ritmo do seu bebê</li>
+                        <li>Orientação clara e prática</li>
+                    </ul>
+                </div>
+            </div>
+            <p style="text-align:center; margin-top:25px; font-size:1.1rem; color:#7c3aed; font-weight:600;">Você deixa de viver com dúvidas. E passa a viver com segurança.</p>
+        </div>
+    </section>
+
+    <!-- PRICING / CTA -->
+    <section class="pricing">
+        <div class="container">
+            <img src="https://estimulandomeuprematuro.com.br/wp-content/uploads/2026/02/LOGO-02-PNG.png" alt="Estimulando Meu Prematuro" style="max-width:200px; margin-bottom:30px;">
+            <h2 style="margin-bottom:20px; font-size:1.6rem;">Tenha acesso completo ao programa Estimulando Meu Prematuro</h2>
+            <p class="price-old">De: R$97,00</p>
+            <p class="price-current">R<span>$27,90</span></p>
+            <p class="price-label">Acesso vitalício ao programa completo</p>
+            <a href="#" class="btn-cta">QUERO ACESSAR AGORA</a>
+        </div>
+    </section>
+
+    <!-- GUARANTEE -->
+    <section class="guarantee">
+        <div class="container">
+            <h3>Garantia incondicional de 30 dias</h3>
+            <p>Você pode acessar todo o conteúdo com tranquilidade. Se dentro de 30 dias você sentir que o programa não é para você, basta solicitar o reembolso. Você não corre nenhum risco.</p>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Veja o que outras mães sentiram após começar o programa</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>"O programa me deu a segurança que eu precisava para estimular minha filha em casa. Hoje vejo o quanto ela já evoluiu!"</blockquote>
+                    <p class="author">Ana C.</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>"Juliana é uma profissional incrível. As aulas são claras e fáceis de seguir. Meu bebê está se desenvolvendo muito bem!"</blockquote>
+                    <p class="author">Mariana S.</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>"Antes eu me sentia perdida. Agora tenho uma rotina de estímulos e vejo meu pequeno progredir a cada dia."</blockquote>
+                    <p class="author">Patrícia L.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Perguntas Frequentes</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Para quem é este programa?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">Para mães, pais e cuidadores de bebês prematuros de 0 a 12 meses que desejam estimular o desenvolvimento dos seus filhos de forma segura e orientada por uma especialista.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Preciso de algum equipamento especial?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">Não! Todos os exercícios foram pensados para serem feitos em casa, com objetos que você já tem, sem necessidade de equipamentos especiais.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Como recebo o acesso?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">Após a confirmação do pagamento, você receberá um e-mail com seus dados de acesso à área de membros onde estarão todas as aulas disponíveis.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>E se eu não gostar? Tem garantia?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">Sim! Você tem 30 dias de garantia incondicional. Se por qualquer motivo não ficar satisfeita, devolvemos 100% do seu dinheiro.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Quanto tempo de acesso eu tenho?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">O acesso é vitalício. Você pode assistir às aulas quantas vezes quiser, no seu tempo.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="pricing">
+        <div class="container">
+            <h2 style="margin-bottom:15px;">Você não precisa mais viver com dúvidas</h2>
+            <p style="margin-bottom:20px; color:#c4b5fd;">Com orientação correta, você pode participar ativamente do desenvolvimento do seu bebê.</p>
+            <p style="font-size:1.5rem; font-weight:700; color:#fbbf24; margin-bottom:15px;">Acesso completo por apenas</p>
+            <p class="price-current">R<span>$27,90</span></p>
+            <a href="#" class="btn-cta">QUERO ACESSAR AGORA</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <img src="https://estimulandomeuprematuro.com.br/wp-content/uploads/2026/02/LOGO-PNG-1024x823.png" alt="Estimulando Meu Prematuro" style="max-width:150px; margin-bottom:15px;">
+            <p>&copy; 2026 Estimulando Meu Prematuro. Todos os direitos reservados.</p>
+            <p>
+                <a href="politicas-de-privacidade.html">Política de Privacidade</a> |
+                <a href="termos-de-uso.html">Termos de Uso</a> |
+                <a href="politica-de-reembolso.html">Política de Reembolso</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.parentElement.classList.toggle('active');
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+</body>
+</html>
