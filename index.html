@@ -635,9 +635,28 @@
     h1 { font-size: 1.75rem; }
     .diff-grid { grid-template-columns: 1fr; }
   }
+
+  /* ─── VIDEO TOPO ─────────────────────── */
+  .video-topo {
+    width: 100%;
+    line-height: 0;
+    overflow: hidden;
+  }
+  .video-topo video {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
   </style>
 </head>
 <body>
+
+<!-- VIDEO TOPO -->
+<div class="video-topo">
+  <video autoplay muted playsinline webkit-playsinline loop preload="auto">
+    <source src="video-topo.mp4" type="video/mp4">
+  </video>
+</div>
 
 <!-- TOP BAR -->
 <div class="topbar">🌸 Fisioterapia Infantil Preventiva &nbsp;·&nbsp; Eulália Angelim &nbsp;·&nbsp; Oficina Torcicolo Zero</div>
